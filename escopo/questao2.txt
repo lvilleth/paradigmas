@@ -1,0 +1,35 @@
+(1) { 
+ n -> variável inteira
+}
+
+(2) { 
+ n -> variável inteira
+ zero -> procedimento
+}
+
+(3) { 
+ n -> variável inteira
+ zero -> procedimento
+}
+
+(4) { 
+ n -> variável inteira
+ zero -> procedimento
+ inc -> procedimento com parâmetro inteiro
+ d -> variável inteira
+} 
+
+(5) { 
+ n -> variável inteira
+ zero -> procedimento
+ inc -> procedimento com parâmetro inteiro
+}
+
+(6) {
+ n -> variável inteira
+ zero -> procedimento
+ inc -> procedimento com parâmetro inteiro
+ main -> procedimento com dois parâmetro: inteiro e ponteiro para ponteiro de caracter
+ argc -> variável inteira
+ argv -> variável ponteiro para ponteiro de caracter
+}
