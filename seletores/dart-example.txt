@@ -1,0 +1,43 @@
+import 'dart:math';
+
+// https://dartpad.dartlang.org/
+
+class Point {
+  num _x, _y;
+
+  Point(this._x, this._y);
+
+  // Cartesiano
+  num get x => _x;
+  num get y => _y;
+  
+  set x(num valor) => _x = valor;
+  set y(num valor) => _y = valor;
+  
+  // Polar
+  num get r => sqrt(x*x + y*y);
+  num get teta => degrees(atan2(y, x));
+  
+  set r(num valor) {
+    x = valor * cos(teta);
+    y = valor * sin(teta);
+  }
+  
+  set teta(num valor) {
+    x = r * cos(valor);
+    y = r * sin(valor);
+  }
+  
+  // converte radiano para graus
+  degrees(num n) {
+    return n * 180/pi;
+  }
+  
+  // print do objeto
+  toString() => 'Cartesiano: (${x},${y})\nPolar: (${r}, ${teta}°)';
+}
+
+void main() {  
+  var p = Point(5,-8);
+  print(p);
+}
