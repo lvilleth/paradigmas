@@ -19,13 +19,15 @@ class Point {
   num get teta => degrees(atan2(y, x));
   
   set r(num valor) {
-    x = valor * cos(teta);
-    y = valor * sin(teta);
+    var ang = teta;
+    x = valor * cos(ang);
+    y = valor * sin(ang);
   }
   
   set teta(num valor) {
-    x = r * cos(valor);
-    y = r * sin(valor);
+    var raio = r;
+    x = raio * cos(valor);
+    y = raio * sin(valor);
   }
   
   // converte radiano para graus
@@ -34,10 +36,16 @@ class Point {
   }
   
   // print do objeto
-  toString() => 'Cartesiano: (${x},${y})\nPolar: (${r}, ${teta}°)';
+  toString() => 'Cartesiano: (${x.truncateToDouble()},${y.truncateToDouble()})\nPolar: (${r.truncateToDouble()},${teta.truncateToDouble()}°)';
 }
 
 void main() {  
-  var p = Point(5,-8);
+  var p = Point(3,4);
+  print(p);
+  
+  print('');
+  
+  p.r = 5;
+  p.teta = pi/2;
   print(p);
 }
